@@ -5,12 +5,12 @@
 
 #### gradle
 ```groovy
-implementation 'com.github.onlyajar:startup:0.0.1'
+implementation 'com.github.onlyajar:startup:0.0.2'
 annotationProcessor 'com.google.auto.service:auto-service:1.1.1'
 ```
 #### gradle.kts
 ```groovy
-implementation("com.github.onlyajar:startup:0.0.1")
+implementation("com.github.onlyajar:startup:0.0.2")
 kapt("com.google.auto.service:auto-service:1.1.1")
 ```
 

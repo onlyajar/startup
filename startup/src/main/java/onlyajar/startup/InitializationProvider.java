@@ -1,5 +1,6 @@
 package onlyajar.startup;
 
+import android.app.Application;
 import android.content.ContentProvider;
 import android.content.ContentValues;
 import android.content.Context;
@@ -13,6 +14,13 @@ import androidx.annotation.Nullable;
 public class InitializationProvider extends ContentProvider {
 
     private static final String TAG = "InitializationProvider";
+
+    private static Application application;
+
+    public static Application getApplication() {
+        return application;
+    }
+
     @Override
     public final boolean onCreate() {
         Context context = getContext();
@@ -20,6 +28,7 @@ public class InitializationProvider extends ContentProvider {
             Context applicationContext = context.getApplicationContext();
             if (applicationContext != null) {
                 AppInitializer.getInstance(context).discoverAndInitialize();
+                application = (Application) applicationContext;
             } else {
                 Log.w(TAG, "Deferring initialization because `applicationContext` is null.");
             }
