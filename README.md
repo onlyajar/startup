@@ -65,4 +65,8 @@ public class App1Start implements Initializer<String>{
     }
 }
 ```
-
+### proguard
+```text
+-keep @com.google.auto.service.AutoService class * { *; }
+-keep class * extends onlyajar.startup.Initializer
+```
